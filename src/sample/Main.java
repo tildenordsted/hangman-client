@@ -13,6 +13,9 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
+import java.io.*;
+import java.net.*;
+import java.security.spec.ECField;
 
 public class Main extends Application {
 
@@ -46,6 +49,7 @@ public class Main extends Application {
                     loginCheck.setText("Fejl. Indtast venligst et brugernavn.");
                 } else {
                     String username = usernameField.getText();
+                    serverConnect(username);
                     loginCheck.setText("Velkommen, " + username + "!");
                 }
             }
@@ -64,6 +68,27 @@ public class Main extends Application {
 
         primaryStage.setScene(new Scene(r, 500, 500));
         primaryStage.show();
+    }
+
+    public void serverConnect(String username) {
+        try {
+            Socket socket = new Socket("localhost",6666);
+
+            DataOutputStream outputFromClient = new DataOutputStream(socket.getOutputStream());
+            DataInputStream inputFromServer = new DataInputStream(socket.getInputStream());
+
+            outputFromClient.writeUTF(username);
+
+            String stringFromServer = (String)inputFromServer.readUTF();
+
+            System.out.println(stringFromServer);
+
+            outputFromClient.close();
+            socket.close();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
 
