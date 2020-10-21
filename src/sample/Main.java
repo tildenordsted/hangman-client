@@ -4,14 +4,14 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.TilePane;
+import javafx.scene.layout.*;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import java.io.*;
 import java.net.*;
@@ -24,8 +24,19 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Hangman Login");
 
+        //HBox til text field og loginknap
+        HBox loginboxH = new HBox();
+        loginboxH.setSpacing(10);
+        loginboxH.setAlignment(Pos.CENTER);
+
+        //VBox til velkomstlabel og HBox
+        VBox loginboxV = new VBox();
+        loginboxV.setSpacing(15);
+        loginboxV.setAlignment(Pos.CENTER);
+
         //Velkomstlabel
-        Label welcomeLabel = new Label("Velkommen til Hangman! Opret bruger her:");
+        Label welcomeLabel = new Label("Velkommen til Hangman! \n Opret bruger her:");
+        welcomeLabel.setTextAlignment(TextAlignment.CENTER);
 
         //Tekstboks
         TextField usernameField = new TextField("Indtast brugernavn");
@@ -36,17 +47,12 @@ public class Main extends Application {
         //Oprettelseslabel
         Label loginCheck = new Label();
 
-        //Omrokerer indholdet
-        welcomeLabel.relocate(150,125);
-        usernameField.relocate(150,150);
-        loginButton.relocate(320,150);
-        loginCheck.relocate(150,200);
 
-        //Respons på knappen
+        //Respons på Loginbutton
         loginButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 if (usernameField.getText() == null || usernameField.getText().trim().isEmpty()) {
-                    loginCheck.setText("Fejl. Indtast venligst et brugernavn.");
+                    loginCheck.setText("Fejl: Indtast venligst et brugernavn for at spille.");
                 } else {
                     String username = usernameField.getText();
                     serverConnect(username);
@@ -55,15 +61,18 @@ public class Main extends Application {
             }
         });
 
+        //Tilføjer usernameField og loginButton til HBox
+        loginboxH.getChildren().addAll(usernameField, loginButton);
+
+        //Tilføjer HBox og velkomstLabel til VBox
+        loginboxV.getChildren().addAll(welcomeLabel, loginboxH, loginCheck);
 
         //Opretter pane objekt (r = root)
-        Pane r = new Pane();
+        StackPane r = new StackPane();
 
-        //Tilføjer label, username og loginbutton til tile
-        r.getChildren().add(welcomeLabel);
-        r.getChildren().add(usernameField);
-        r.getChildren().add(loginButton);
-        r.getChildren().add(loginCheck);
+
+        //Tilføjer VBox til tile
+        r.getChildren().add(loginboxV);
 
 
         primaryStage.setScene(new Scene(r, 500, 500));
