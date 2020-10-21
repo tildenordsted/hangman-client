@@ -72,13 +72,18 @@ public class Main extends Application {
 
     public void serverConnect(String username) {
         try {
+
+            //Opretter socket objekt
             Socket socket = new Socket("localhost",6666);
 
+            //Client/Server input/output
             DataOutputStream outputFromClient = new DataOutputStream(socket.getOutputStream());
             DataInputStream inputFromServer = new DataInputStream(socket.getInputStream());
 
+            //Sender username-string til server
             outputFromClient.writeUTF(username);
 
+            //Modtager forbindelsesbesked fra serveren
             String stringFromServer = (String)inputFromServer.readUTF();
 
             System.out.println(stringFromServer);
@@ -87,6 +92,8 @@ public class Main extends Application {
             socket.close();
 
         } catch (Exception e) {
+
+            //Fejlbesked
             System.out.println(e);
         }
     }
