@@ -43,9 +43,10 @@ public class Main extends Application {
         loginButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 if (usernameField.getText() == null || usernameField.getText().trim().isEmpty()) {
-                    loginCheck.setText("nono");
+                    loginCheck.setText("Fejl. Indtast venligst et brugernavn.");
                 } else {
-                    loginCheck.setText("yesyes");
+                    String username = usernameField.getText();
+                    loginCheck.setText("Velkommen, " + username + "!");
                 }
             }
         });
