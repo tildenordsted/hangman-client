@@ -57,6 +57,8 @@ public class Main extends Application {
                     String username = usernameField.getText();
                     serverConnect(username);
                     loginCheck.setText("Velkommen, " + username + "!");
+                    TestScene testScene = new TestScene();
+                    testScene.start(primaryStage);
                 }
             }
         });
