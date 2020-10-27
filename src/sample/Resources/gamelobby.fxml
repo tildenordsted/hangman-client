@@ -9,12 +9,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane fx:id="paneroot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="385.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerLobby">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="385.0" prefWidth="307.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerLobby">
    <children>
-      <VBox fx:id="VBoxroot" layoutX="1.0" layoutY="1.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="1.0">
+      <VBox layoutX="1.0" layoutY="1.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="1.0">
          <children>
-            <Text fx:id="lobbytext" strokeType="OUTSIDE" strokeWidth="0.0" text="Current games" textAlignment="CENTER" wrappingWidth="125.45313262939453">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Current games" textAlignment="CENTER" wrappingWidth="125.45313262939453">
                <VBox.margin>
                   <Insets bottom="5.0" />
                </VBox.margin>
@@ -22,7 +21,7 @@
                   <Font size="16.0" />
                </font>
             </Text>
-            <ListView fx:id="lobbylistview" prefHeight="277.0" prefWidth="580.0">
+            <ListView fx:id="lobbylistview" prefHeight="280.0" prefWidth="100.0">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
@@ -30,7 +29,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </ListView>
-            <HBox fx:id="Hboxroot" prefHeight="75.0" prefWidth="600.0">
+            <HBox prefHeight="75.0" prefWidth="600.0">
                <children>
                   <Button fx:id="newgame" mnemonicParsing="false" onMouseClicked="#onClickEvent" prefHeight="30.0" prefWidth="123.0" text="Create new game">
                      <padding>
@@ -40,18 +39,18 @@
                         <Insets left="10.0" top="15.0" />
                      </HBox.margin>
                      <font>
-                        <Font size="9.0" />
+                        <Font name="System Bold" size="9.0" />
                      </font>
                   </Button>
                   <Button fx:id="joingame" mnemonicParsing="false" onMouseClicked="#onClickEvent" prefHeight="25.0" prefWidth="89.0" text="Join game">
                      <HBox.margin>
-                        <Insets left="345.0" top="15.0" />
+                        <Insets left="50.0" top="15.0" />
                      </HBox.margin>
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                      <font>
-                        <Font size="9.0" />
+                        <Font name="System Bold" size="9.0" />
                      </font>
                   </Button>
                </children>
