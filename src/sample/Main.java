@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.LoadException;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -22,6 +23,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent loginRoot = FXMLLoader.load(getClass().getResource("HangmanLoginScene.fxml"));
+        Parent gameRoot = FXMLLoader.load(getClass().getResource("HangmanGame.fxml"));
         primaryStage.setTitle("Hangman Login");
 
         //HBox til text field og loginknap
@@ -57,8 +60,11 @@ public class Main extends Application {
                     String username = usernameField.getText();
                     serverConnect(username);
                     loginCheck.setText("Velkommen, " + username + "!");
-                    TestScene testScene = new TestScene();
-                    testScene.start(primaryStage);
+                    try {
+                        GameScene testScene = new GameScene();
+                        testScene.start(primaryStage);
+                    } catch (Exception ef) {}
+
                 }
             }
         });
@@ -77,7 +83,8 @@ public class Main extends Application {
         r.getChildren().add(loginboxV);
 
 
-        primaryStage.setScene(new Scene(r, 500, 500));
+        //primaryStage.setScene(new Scene(r, 500, 500));
+        primaryStage.setScene(new Scene(loginRoot));
         primaryStage.show();
     }
 
@@ -113,4 +120,6 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+
 }
