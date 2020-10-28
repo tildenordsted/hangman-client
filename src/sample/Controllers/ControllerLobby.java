@@ -1,4 +1,4 @@
-package Controllers;
+package sample.Controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -42,7 +42,6 @@ public class ControllerLobby implements Initializable {
         String b = "Placeholder lobby nr. 2     |   2/3 players";
         lobbylist.addAll(a, b);
         lobbylistview.getItems().addAll(lobbylist);
-        System.out.println(lobbylist);
     }
 
 
