@@ -18,7 +18,6 @@
                   <TextField fx:id="usernameField" prefHeight="18.0" prefWidth="157.0" promptText="Indtast brugernavn" style="-fx-prompt-text-fill: grey"/>
                   <Button fx:id="loginButton" mnemonicParsing="false" text="Opret"  />
                </children>
-
             </HBox>
             <Label fx:id="loginCheck" prefHeight="18.0" prefWidth="157.0" text="" style="-fx-text-fill: red"/>
          </children>

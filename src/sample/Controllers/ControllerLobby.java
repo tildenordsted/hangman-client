@@ -75,8 +75,6 @@ public class ControllerLobby implements Initializable {
         return lobbylistview.getSelectionModel().getSelectedIndices();
     }
 
-
-
 }
 
 

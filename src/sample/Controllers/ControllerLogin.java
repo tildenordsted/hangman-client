@@ -24,7 +24,6 @@ public class ControllerLogin implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) { }
 
-
     //Getters and Setters
     public Label getLoginCheck(){
         return this.loginCheck;
@@ -37,6 +36,5 @@ public class ControllerLogin implements Initializable {
     public Button getLoginButton(){
         return this.loginButton;
     }
-
 
 }
