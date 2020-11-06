@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <VBox layoutX="300.0" layoutY="160.0" prefHeight="81.0" prefWidth="254.0" spacing="10.0">
+         <children>
+            <Label fx:id="velkomstLabel" prefHeight="27.0" prefWidth="310.0" text="Velkommen til Hangman! Opret bruger her:" />
+            <HBox prefHeight="41.0" prefWidth="237.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="usernameField" prefHeight="18.0" prefWidth="157.0" promptText="Indtast brugernavn" />
+                  <Button fx:id="loginButton" mnemonicParsing="false" text="Opret" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <ImageView fx:id="hangmanImageLogin" fitHeight="295.0" fitWidth="229.0" layoutX="42.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
