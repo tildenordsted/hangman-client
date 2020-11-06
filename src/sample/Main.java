@@ -125,6 +125,42 @@ public class Main extends Application {
 
 
                             }
+                                                    if (typeOfMessage.equalsIgnoreCase("updatelives")) {
+
+                            //get the message
+                            String messageFromServer = message.getMessage();
+                            int lives = 2;
+
+                            drawHangman(lives, controllerGame.getHangmanImage());
+
+                        }
+
+                        //if message from server is to update guessed words
+                        if (typeOfMessage.equalsIgnoreCase("newguess")) {
+
+                            //get the message
+                            String newGuess = message.getMessage();
+
+                            //add guess to guessedLettersBox Label
+                            Platform.runLater(() -> {
+                                controllerGame.setGuessedLettersBox(controllerGame.getGuessedLettersBox() + "\n" + newGuess);
+                            });
+
+                        }
+
+                        //if message from is to update names of users list
+                        if (typeOfMessage.equalsIgnoreCase("updateusers")) {
+
+                            //get the message
+                            String strOfUsers = message.getMessage();
+                            System.out.println(strOfUsers);
+
+                            //add username to Label
+                            //controllerGame.setGuessedLettersBox(controllerGame.getGuessedLettersBox() + "\n" + newGuess);
+                            Platform.runLater(() -> {
+                                controllerGame.setUsersList(strOfUsers);
+                            });
+                        }
 
 
 
@@ -205,6 +241,51 @@ public class Main extends Application {
             }
 
         }); //end handle button join
+        
+             //handle New Game button event
+        controllerLobby.getNewGameButton().setOnAction((event) -> {
+            System.out.println("New game button pressed");
+
+            //create message object that a new game room should be created
+            try {
+                Message messageChoosenGameRoom = new Message("newgame", "newgame");
+                objectOutputStream.writeObject(messageChoosenGameRoom);
+
+                //show Game scene
+                primaryStage.setTitle("Hangman Game");
+                primaryStage.setScene(new Scene(gameSceneRoot));
+                primaryStage.show();
+
+
+                //set first image
+                drawHangman(1, controllerGame.getHangmanImage());
+
+            } catch (IOException exception) {
+                exception.printStackTrace();
+            }
+
+        }); //end handle button create
+
+        //handle Guess word Button
+        controllerGame.getSubmitGuessButton().setOnAction((event) -> {
+
+            //get guess
+            String guess = controllerGame.getGuessingField().getText();
+
+            //add guess to guessedLettersBox Label
+            //controllerGame.setGuessedLettersBox(controllerGame.getGuessedLettersBox() + "\n" + guess);
+
+            //create message object to server with guess
+            try {
+                Message messageWithGuess = new Message(guess, "guess");
+                objectOutputStream.writeObject(messageWithGuess);
+
+
+            } catch (IOException exception) {
+                exception.printStackTrace();
+            }
+
+        }); //end handle button guess word
 
 
     }//end start
