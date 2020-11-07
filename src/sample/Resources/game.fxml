@@ -7,11 +7,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <ImageView id="hangmanImage" fx:id="hangmanImage" fitHeight="254.0" fitWidth="208.0" layoutX="50.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
-      <Label id="wordLabel" fx:id="gameWord" layoutX="62.0" layoutY="295.0" lineSpacing="10.0" prefHeight="33.0" prefWidth="184.0" />
+      <Label id="wordLabel" fx:id="gameWord" layoutX="29.0" layoutY="295.0" lineSpacing="10.0" prefHeight="33.0" prefWidth="250.0" />
       <HBox layoutX="16.0" layoutY="353.0" prefHeight="33.0" prefWidth="568.0" spacing="10.0">
          <children>
             <Label text="Skriv et bogstav/ord her:" />
@@ -20,8 +19,8 @@
          </children>
       </HBox>
       <Label id="lettersUsed" fx:id="guessedLettersText" layoutX="347.0" layoutY="141.0" prefHeight="11.0" prefWidth="223.0" text="Gættede bogstaver:" />
-      <Label id="playerTurn" fx:id="playerTurn" layoutX="347.0" layoutY="47.0" prefHeight="17.0" prefWidth="85.0" text="Spillers runde:" />
-      <Label fx:id="usernameLabel" layoutX="347.0" layoutY="83.0" prefHeight="50.0" prefWidth="161.0"  />
-      <Label fx:id="guessedLettersBox" layoutX="347.0" layoutY="173.0" prefHeight="138.0" prefWidth="216.0" text="" />
+      <Label id="playerTurn" fx:id="playerTurn" layoutX="347.0" layoutY="47.0" prefHeight="17.0" prefWidth="216.0" text="Spillers runde:" />
+      <Label fx:id="usernameLabel" layoutX="347.0" layoutY="83.0" prefHeight="33.0" prefWidth="161.0" />
+      <Label fx:id="guessedLettersBox" layoutX="347.0" layoutY="173.0" prefHeight="170.0" prefWidth="216.0" />
    </children>
 </AnchorPane>
