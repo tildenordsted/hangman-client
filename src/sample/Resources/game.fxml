@@ -7,6 +7,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
+
+
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <ImageView id="hangmanImage" fx:id="hangmanImage" fitHeight="254.0" fitWidth="208.0" layoutX="50.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
