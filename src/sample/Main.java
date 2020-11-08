@@ -172,7 +172,7 @@ public class Main extends Application {
 
                                 //add username to Label
                                 Platform.runLater(() -> {
-                                    controllerGame.setPlayersTurn(controllerGame.getPlayersTurn() + "\n" + messagePlayersTurn);
+                                    controllerGame.setPlayersTurn("Brugers runde: " + messagePlayersTurn);
                                 });
                             }
                         
