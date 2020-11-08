@@ -82,6 +82,7 @@ public class ControllerGame implements Initializable {
         this.usernameLabel.setText(str);
     }
 
+
     //set and get gameword label
     public String getGameWord() {
         return this.gameWord.getText();

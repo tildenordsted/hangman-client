@@ -175,6 +175,7 @@ public class Main extends Application {
                             });
                         }
 
+
                             if (typeOfMessage.equalsIgnoreCase("playersturn")) {
 
                                 //get the message
