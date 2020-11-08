@@ -27,6 +27,12 @@ public class ControllerGame implements Initializable {
 
     @FXML
     private ImageView hangmanImage;
+    
+    @FXML
+    private Label playerTurn;
+
+    @FXML
+    private Label gameWord;
 
 
     public ControllerGame(){}
