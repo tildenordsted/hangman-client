@@ -21,6 +21,6 @@
       <Label id="lettersUsed" fx:id="guessedLettersText" layoutX="347.0" layoutY="141.0" prefHeight="11.0" prefWidth="223.0" text="Gættede bogstaver:" />
       <Label id="playerTurn" fx:id="playerTurn" layoutX="347.0" layoutY="47.0" prefHeight="17.0" prefWidth="85.0" text="Spillers runde:" />
       <Label fx:id="usernameLabel" layoutX="347.0" layoutY="83.0" prefHeight="50.0" prefWidth="161.0"  />
-      <Label fx:id="guessedLettersBox" layoutX="347.0" layoutY="173.0" prefHeight="138.0" prefWidth="216.0" text="" />
+      <Label fx:id="guessedLettersBox" layoutX="347.0" layoutY="173.0" prefHeight="170.0" prefWidth="216.0" text="" />
    </children>
 </AnchorPane>
