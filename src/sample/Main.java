@@ -24,6 +24,7 @@ public class Main extends Application {
     //port and hostname
     private int port = 6666;
     private String hostName = "localhost";
+    private int imageToShow = 1;
 
     //Input, output streams for client
     private ObjectOutputStream objectOutputStream;
@@ -142,9 +143,8 @@ public class Main extends Application {
 
                             //get the message
                             String messageFromServer = message.getMessage();
-                            int lives = 2;
 
-                            drawHangman(lives, controllerGame.getHangmanImage());
+                            drawHangman(imageToShow, controllerGame.getHangmanImage());
 
                         }
 
@@ -200,7 +200,19 @@ public class Main extends Application {
                             });
                         }
 
+                        //if update image
+                        if (typeOfMessage.equalsIgnoreCase("updateimage")) {
 
+                            //get the message
+                            String messageUpdateImage = message.getMessage();
+
+                            //update imageToShow
+                            imageToShow++;
+
+                            //update image
+                            drawHangman(imageToShow, controllerGame.getHangmanImage());
+
+                        }
 
 
                     }catch(IOException | ClassNotFoundException ex){
@@ -348,34 +360,54 @@ public class Main extends Application {
 
         switch (lives) {
             case 1:
-                imageView.setImage(hm01);
+                Platform.runLater(() -> {
+                    imageView.setImage(hm01);
+                });
                 break;
             case 2:
-                imageView.setImage(hm02);
+                Platform.runLater(() -> {
+                    imageView.setImage(hm02);
+                });
                 break;
             case 3:
-                imageView.setImage(hm03);
+                Platform.runLater(() -> {
+                    imageView.setImage(hm03);
+                });
                 break;
             case 4:
-                imageView.setImage(hm04);
+                Platform.runLater(() -> {
+                    imageView.setImage(hm04);
+                });
                 break;
             case 5:
-                imageView.setImage(hm05);
+                Platform.runLater(() -> {
+                    imageView.setImage(hm05);
+                });
                 break;
             case 6:
-                imageView.setImage(hm06);
+                Platform.runLater(() -> {
+                    imageView.setImage(hm06);
+                });
                 break;
             case 7:
-                imageView.setImage(hm07);
+                Platform.runLater(() -> {
+                    imageView.setImage(hm07);
+                });
                 break;
             case 8:
-                imageView.setImage(hm08);
+                Platform.runLater(() -> {
+                    imageView.setImage(hm08);
+                });
                 break;
             case 9:
-                imageView.setImage(hm09);
+                Platform.runLater(() -> {
+                    imageView.setImage(hm09);
+                });
                 break;
             case 10:
-                imageView.setImage(hm10);
+                Platform.runLater(() -> {
+                    imageView.setImage(hm10);
+                });
                 break;
         }
     }
