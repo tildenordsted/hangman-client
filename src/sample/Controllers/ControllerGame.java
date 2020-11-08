@@ -69,4 +69,24 @@ public class ControllerGame implements Initializable {
     public void setUsersList(String str) {
         this.usernameLabel.setText(str);
     }
+    
+      public void setPlayersTurn(String str) {
+        this.playerTurn.setText(str);
+    }
+
+    public String getPlayersTurn() {
+        return this.playerTurn.getText();
+    }
+    
+    
+    //set and get gameword label
+    public String getGameWord() {
+        return this.gameWord.getText();
+    }
+
+    public void setGameWord(String str) {
+        this.gameWord.setText(str);
+    }
+    
+    
 }
