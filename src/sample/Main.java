@@ -24,6 +24,7 @@ public class Main extends Application {
     //port and hostname
     private int port = 6666;
     private String hostName = "localhost";
+    private int imageToShow = 1;
 
     //Input, output streams for client
     private ObjectOutputStream objectOutputStream;
@@ -174,7 +175,8 @@ public class Main extends Application {
                                     controllerGame.setPlayersTurn(controllerGame.getPlayersTurn() + "\n" + messagePlayersTurn);
                                 });
                             }
-
+                        
+                        //update word string
                         if (typeOfMessage.equalsIgnoreCase("updateword")) {
 
                             //get the message
@@ -184,6 +186,20 @@ public class Main extends Application {
                             Platform.runLater(() -> {
                                 controllerGame.setGameWord(messageUpdateWord);
                             });
+                        }
+                        
+                        //if update image
+                        if (typeOfMessage.equalsIgnoreCase("updateimage")) {
+
+                            //get the message
+                            String messageUpdateImage = message.getMessage();
+
+                            //update imageToShow
+                            imageToShow++;
+
+                            //update image
+                            drawHangman(imageToShow, controllerGame.getHangmanImage());
+
                         }
 
 
@@ -258,7 +274,7 @@ public class Main extends Application {
                 primaryStage.show();
 
                 //set first image
-                drawHangman(1, controllerGame.getHangmanImage());
+                drawHangman(imageToShow, controllerGame.getHangmanImage());
 
 
             } catch (IOException exception) {
@@ -283,7 +299,7 @@ public class Main extends Application {
 
 
                 //set first image
-                drawHangman(1, controllerGame.getHangmanImage());
+                drawHangman(imageToShow, controllerGame.getHangmanImage());
 
             } catch (IOException exception) {
                 exception.printStackTrace();
