@@ -125,7 +125,7 @@ public class Main extends Application {
 
 
                             }
-                                                    if (typeOfMessage.equalsIgnoreCase("updatelives")) {
+                        if (typeOfMessage.equalsIgnoreCase("updatelives")) {
 
                             //get the message
                             String messageFromServer = message.getMessage();
@@ -161,6 +161,31 @@ public class Main extends Application {
                                 controllerGame.setUsersList(strOfUsers);
                             });
                         }
+                        
+                        if (typeOfMessage.equalsIgnoreCase("playersturn")) {
+
+                                //get the message
+                                String messagePlayersTurn = message.getMessage();
+                                System.out.println(messagePlayersTurn);
+                                System.out.println(controllerGame.getPlayersTurn() + "\n" + messagePlayersTurn);
+
+                                //add username to Label
+                                Platform.runLater(() -> {
+                                    controllerGame.setPlayersTurn(controllerGame.getPlayersTurn() + "\n" + messagePlayersTurn);
+                                });
+                            }
+
+                        if (typeOfMessage.equalsIgnoreCase("updateword")) {
+
+                            //get the message
+                            String messageUpdateWord = message.getMessage();
+
+                            //add username to Label
+                            Platform.runLater(() -> {
+                                controllerGame.setGameWord(messageUpdateWord);
+                            });
+                        }
+
 
 
 
